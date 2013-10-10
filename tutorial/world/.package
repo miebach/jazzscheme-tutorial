@@ -1,0 +1,4 @@
+(package world
+
+  (products (hello (run hello.run))))
+

@@ -1,0 +1,10 @@
+(package hello-process
+  
+  (root "src")
+  (products (hello-process (title "Hello-Process")
+                       (run hello-process.run)
+                       (update hello-process.process
+                               hello-process.run)
+                       (build (hello-process))
+                       (dependencies jazz)))
+  (project ".project"))

@@ -1,0 +1,23 @@
+;;;==============
+;;;  JazzScheme
+;;;==============
+;;;
+;;;; Hello-Process
+;;;
+
+
+(module hello-process.process jazz
+
+
+(import (jazz.platform)
+        (jazz.system)
+        (jazz.system.process))
+
+
+(class Hello-Process-Process extends Process
+  
+  
+  (method override (start-process)
+    (system-message "Hello World!")
+    (sleep 5)
+    (exit-process))))

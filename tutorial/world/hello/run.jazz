@@ -1,0 +1,5 @@
+(module hello.run jazz
+
+(register-product-run 'hello
+  (lambda (descriptor)
+    (load-unit 'hello.access))))

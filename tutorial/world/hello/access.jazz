@@ -1,0 +1,7 @@
+(module hello.access jazz
+
+(require hello.native)
+
+(native hello-world)
+
+(display (hello-world)))

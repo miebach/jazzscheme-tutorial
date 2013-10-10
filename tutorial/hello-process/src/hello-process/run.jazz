@@ -1,0 +1,17 @@
+;;;==============
+;;;  JazzScheme
+;;;==============
+;;;
+;;;; Hello-Process Run
+;;;
+
+
+(module hello-process.run jazz
+
+
+(import (hello-process.process))
+
+
+(register-product-run 'hello-process
+  (lambda (descriptor)
+    (boot-environment~ (new Hello-Process-Process)))))
