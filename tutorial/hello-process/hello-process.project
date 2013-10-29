@@ -9,5 +9,12 @@
 (data jazz.debugger.jazz.data.project
 
 
+(import (jazz.editor.jazz))
+
+
 (form
-  (<Jazz-Project> name: Hello-Process directory: {Directory Projects} product: hello-process)))
+  (<Jazz-Project>          name: Hello-Process directory: {Directory Projects} product: hello-process
+    (<Project-Directory>                       directory: {Directory :context "src"}
+      (<Project-Directory>                     directory: {Directory :context "src" "hello-process"}
+        (<Jazz-File>       name: process       source: {File :context "src" "hello-process" "process.jazz"})
+        (<Jazz-File>       name: run           source: {File :context "src" "hello-process" "run.jazz"}))))))

@@ -8,6 +8,7 @@
 
 (module hello-process.process jazz
 
+(import (termite))
 
 (import (jazz.platform)
         (jazz.system)
@@ -18,6 +19,16 @@
   
   
   (method override (start-process)
-    (system-message "Hello World!")
+    (system-message "Hello World2 !")
+
+    (let ((me (self)))
+      (spawn
+        (lambda ()
+          (send me "Hello Termite!"))))
+    (let ((the-answer (retrieve)))
+      (system-message (the-answer)))
+    (system-message "End")
+    
     (sleep 5)
+    
     (exit-process))))
