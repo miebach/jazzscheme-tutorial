@@ -24,9 +24,9 @@
     (let ((me (self)))
       (spawn
         (lambda ()
-          (send me "Hello Termite!"))))
+          (send self "Hello Termite!"))))
     (let ((the-answer (retrieve)))
-      (system-message (the-answer)))
+      (system-message the-answer))
     (system-message "End")
     
     (sleep 5)
