@@ -21,10 +21,10 @@
   (method override (start-process)
     (system-message "Hello World2 !")
 
-    (let ((me (self)))
+    (let ((current-me (me)))
       (spawn
         (lambda ()
-          (send self "Hello Termite!"))))
+          (send current-me "Hello Termite!"))))
     (let ((the-answer (retrieve)))
       (system-message the-answer))
     (system-message "End")
@@ -32,3 +32,32 @@
     (sleep 5)
     
     (exit-process))))
+
+
+
+;Works with this module definition:
+;(module termite scheme
+;
+;(require (termite.implementation))
+;
+;(export (termite.syntax (phase syntax)))
+;        ;(jazz.test.module.e (except e1))
+;        ;(jazz.test.module.o (only o1))
+;        ;(jazz.test.module.p (prefix p$))
+;        ;(jazz.test.module.r (rename (r1 rr1))))
+;
+;(native me)
+;(native send)
+;(native !)
+;(native retrieve)
+;(native ?)
+;
+;(native |termite#spawn|)
+;(native |termite#spawn-link|)
+;
+;;; private
+;(native |termite#handle-exception-message|)
+;(native |termite#termite-exception?|)
+;(native |termite#pid?|))
+
+
